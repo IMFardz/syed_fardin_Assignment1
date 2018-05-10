@@ -9,13 +9,16 @@ def replace_word(filename, find, replace):
 	if find not in s:
 	    return
 	f.close()
+    os.chdir("./replace")
     with open(filename,'w') as f:
 	s = s.replace(find, replace)
 	f.write(s)
 	f.close() 
-
+    os.chdir("..")
 
 if __name__ == "__main__":
+    if not os.path.exists("./replace"):
+        os.makedirs('replace')
     find = sys.argv[1]
     replace = sys.argv[2]
     for file in glob.glob("*.txt"):
