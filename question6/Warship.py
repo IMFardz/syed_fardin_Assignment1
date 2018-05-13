@@ -6,14 +6,11 @@ class Warship(Ship):
     name: str
     alive: bool
 
-    shield_strength = 10
-    hull_strength = 10
-    laser_power = 5
     high_power_bonus = 5
 
     def __init__(self, name) -> None:
         """Creates a new instance of Warship"""
-        super().__init__(name, Warship.laser_power, Warship.hull_strength, Warship.shield_strength)
+        super().__init__(name)
 
     def attack(self, other_ship) -> None:
         """Attack other_ship"""

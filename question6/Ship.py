@@ -10,13 +10,13 @@ class Ship:
     name: str
     alive: bool
 
-    def __init__(self, name, laser_power, hull_strength, shield_strength) -> None:
+    def __init__(self, name) -> None:
         """Create a new instance of Ship"""
         self.alive = True
         self.name = name
-        self.laser_power = laser_power
-        self.hull_strength = hull_strength
-        self.shield_strength = shield_strength
+        self.laser_power = 5
+        self.hull_strength = 10
+        self.shield_strength = 10
 
     def __str__(self):
         return "Name:{}  Hull Strength: {}  Laser Power {}".format(self.name, self.hull_strength, self.laser_power)
@@ -37,6 +37,3 @@ class Ship:
     def attack(self, other_ship: "Ship"):
         """Attacks other ship"""
         other_ship.take_hit(self.laser_power)
-
-
-
