@@ -19,7 +19,7 @@ class Ship:
         self.shield_strength = 10
 
     def __str__(self):
-        return "Name:{}  Hull Strength: {}  Laser Power {}".format(self.name, self.hull_strength, self.laser_power)
+        return "Name:{}  Hull Strength: {}  Shield Power {}".format(self.name, self.hull_strength, self.shield_strength)
 
     def take_hit(self, attack_power) -> None:
         """Modifies ship status after taking a hit"""
