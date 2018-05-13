@@ -18,4 +18,4 @@ class Speeder(Ship):
         if a <= 0.5:
             pass
         else:
-            super.attack(attack_power)
+            super().take_hit(attack_power)

@@ -24,11 +24,13 @@ class Ship:
     def take_hit(self, attack_power) -> None:
         """Modifies ship status after taking a hit"""
         if self.shield_strength != 0:
-            if self.shield_strength > attack_power:
+            if self.shield_strength < attack_power:
+                self.hull_strength -= 0.5 * (attack_power -self.shield_strength)
                 self.shield_strength = 0
-                self.hull_strength -= 0.5 * attack_power
                 if self.hull_strength <= 0:
                     self.alive = False
+            else:
+                self.shield_strength -= attack_power
         else:
             self.hull_strength -= 0.5 * attack_power
             if self.hull_strength <= 0:

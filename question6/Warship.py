@@ -18,6 +18,6 @@ class Warship(Ship):
         if a <= 0.3:
             self.laser_power += Warship.high_power_bonus
 
-        super.attack(other_ship)
+        super().attack(other_ship)
 
         self.laser_power -= Warship.high_power_bonus
